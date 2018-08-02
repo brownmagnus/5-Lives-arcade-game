@@ -54,6 +54,10 @@ Player.prototype.update = function() {
       this.reset();
     }
   }
+  // Check if the player reach the final tile
+    if(this.y === -10) {
+      alert('You have Won!!!');
+    }
 };
 
 // Reset the player position to the start
