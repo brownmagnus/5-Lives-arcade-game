@@ -23,6 +23,8 @@ Enemy.prototype.render = function() {
 
 // Game player class
 var Player = function() {
+    this.step = 100;
+    this.jump = 100;
     this.x = 202;
     this.y = 405;
     // The image/sprite for our player
@@ -31,14 +33,24 @@ var Player = function() {
 // This class requires an update(), render() and
 // a handleInput() method.
 Player.prototype.update = function() {
-    
+
 };
 // Draw the Player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-
+Player.prototype.handleInput = function(input) {
+  if (input == 'left') {
+      this.x -= this.step;
+    } else if (input == 'right') {
+      this.x += this.step;
+    } else if (input == 'up') {
+      this.y -= this.jump;
+    } else if (input == 'down') {
+      this.y += this.jump;
+    }
+};
 
 
 // Now instantiate your objects.
