@@ -23,8 +23,8 @@ Enemy.prototype.render = function() {
 
 // Game player class
 var Player = function() {
-    this.step = 100;
-    this.jump = 100;
+    this.step = 101;
+    this.jump = 83;
     this.x = 202;
     this.y = 405;
     // The image/sprite for our player
@@ -42,13 +42,21 @@ Player.prototype.render = function() {
 
 Player.prototype.handleInput = function(input) {
   if (input == 'left') {
-      this.x -= this.step;
+      if (this.x > 0) {
+        this.x -= this.step;
+      }
     } else if (input == 'right') {
-      this.x += this.step;
+      if (this.x < this.step * 4) {
+        this.x += this.step;
+      }
     } else if (input == 'up') {
-      this.y -= this.jump;
+      if(this.y > 0) {
+        this.y -= this.jump;
+      }
     } else if (input == 'down') {
-      this.y += this.jump;
+      if (this.y < this.jump * 4) {
+        this.y += this.jump;
+      }
     }
 };
 
