@@ -43,6 +43,7 @@ var Player = function() {
     this.y = this.startY;
     // The image/sprite for our player
     this.sprite = 'images/char-boy.png';
+    this.victory = false;
 };
 
 // check for any collision while the game is on
@@ -56,7 +57,7 @@ Player.prototype.update = function() {
   }
   // Check if the player reach the final tile
     if(this.y === -10) {
-      alert('You have Won!!!');
+      this.victory = true;
     }
 };
 

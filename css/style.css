@@ -28,11 +28,6 @@ body {
   border-bottom: 1px solid blue;
 }
 
-.modal_close {
-  font-weight: bold;
-  font-size: 2rem;
-}
-
 .modal_buttons {
   display: flex;
   justify-content: space-around;
