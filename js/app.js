@@ -37,21 +37,30 @@ Enemy.prototype.render = function() {
 var Player = function() {
     this.step = 101;
     this.jump = 83;
-    this.x = 202;
-    this.y = 405;
+    this.startX = this.step * 2;
+    this.startY = (this.jump * 4) + 73;
+    this.x = this.startX;
+    this.y = this.startY;
     // The image/sprite for our player
     this.sprite = 'images/char-boy.png';
 };
-// This class requires an update(), render() and
-// a handleInput() method.
-Player.prototype.update = function() {
 
+// check for any collision while the game is on
+Player.prototype.update = function() {
+  // check for any collision here
+  for (let enemy of allEnemies) {
+    // Is player's on the tile with eme
+    if (this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2))  {
+      alert("there was a collision");
+    }
+  }
 };
+
 // Draw the Player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
-
+// a handleInput() method.
 Player.prototype.handleInput = function(input) {
   if (input == 'left') {
       if (this.x > 0) {
