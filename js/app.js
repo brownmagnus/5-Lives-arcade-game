@@ -34,7 +34,7 @@ Enemy.prototype.render = function() {
 };
 
 // Game player class
-var Player = function() {
+var Player = function(charIn) {
     this.step = 101;
     this.jump = 83;
     this.startX = this.step * 2;
@@ -42,7 +42,7 @@ var Player = function() {
     this.x = this.startX;
     this.y = this.startY;
     // The image/sprite for our player
-    this.sprite = 'images/char-boy.png';
+    this.sprite = charIn;
     this.victory = false;
 };
 
@@ -55,12 +55,21 @@ Player.prototype.update = function() {
       this.reset();
     }
   }
+
   // Check if the player reach the final tile
     if(this.y === -10) {
+      gameLevel += 1;
+      if (gameLevel === 5) {
+        gameLevel = 0;
+      }
       this.victory = true;
     }
 };
 
+// change to a new player
+Player.prototype.changeP = function() {
+  this.sprite = levelChar[gameLevel];
+};
 // Reset the player position to the start
 Player.prototype.reset = function() {
   this.y = this.startY;
@@ -91,7 +100,6 @@ Player.prototype.handleInput = function(input) {
     }
 };
 
-
 // Now instantiate your objects.
 const bug1 = new Enemy(-101, 0, 200);
 const bug2 = new Enemy(-101, 83, 300);
@@ -101,7 +109,14 @@ const allEnemies = [];
 // Place all enemy objects in an array called allEnemies
 allEnemies.push(bug1, bug2, bug3, bug4);
 // Place the player object in a variable called player
-const player =  new Player();
+const levelChar = [
+        'images/char-boy.png',
+        'images/char-horn-girl.png',
+        'images/char-cat-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png'];
+let gameLevel = 0;
+const player =  new Player(levelChar[gameLevel]);
 
 
 // This listens for key presses and sends the keys to your
