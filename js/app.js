@@ -1,8 +1,8 @@
 // Enemies our player must avoid
-var Enemy = function() {
-    this.x = 101;
-    this.y = 83;
-    this.speed = 150;
+var Enemy = function(x, y, speed) {
+    this.x = x;
+    this.y = y + 73;
+    this.speed = speed;
     this.step = 101;
     this.boundary = this.step * 5;
     this.restPos = -this.step;
@@ -74,10 +74,13 @@ Player.prototype.handleInput = function(input) {
 
 
 // Now instantiate your objects.
-const bug1 = new Enemy();
+const bug1 = new Enemy(-101, 0, 200);
+const bug2 = new Enemy(-101, 83, 300);
+const bug3 = new Enemy((-101*2.5), 83, 250);
+const bug4 = new Enemy(-101, 166, 150);
 const allEnemies = [];
 // Place all enemy objects in an array called allEnemies
-allEnemies.push(bug1)
+allEnemies.push(bug1, bug2, bug3, bug4);
 // Place the player object in a variable called player
 const player =  new Player();
 
