@@ -51,11 +51,16 @@ Player.prototype.update = function() {
   for (let enemy of allEnemies) {
     // Is player's on the tile with eme
     if (this.y === enemy.y && (enemy.x + enemy.step/2 > this.x && enemy.x < this.x + this.step/2))  {
-      alert("there was a collision");
+      this.reset();
     }
   }
 };
 
+// Reset the player position to the start
+Player.prototype.reset = function() {
+  this.y = this.startY;
+  this.x = this.startX;
+};
 // Draw the Player on the screen, required method for game
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
