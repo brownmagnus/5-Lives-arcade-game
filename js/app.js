@@ -3,6 +3,9 @@ var Enemy = function() {
     this.x = 101;
     this.y = 83;
     this.speed = 150;
+    this.step = 101;
+    this.boundary = this.step * 5;
+    this.restPos = -this.step;
     // The image/sprite for our enemies, this uses
     // a helper we've provided to easily load images
     this.sprite = 'images/enemy-bug.png';
@@ -15,8 +18,14 @@ Enemy.prototype.update = function(dt) {
     // which will ensure the game runs at the same speed for
     // all computers.
 
-    // Move forward across the screen
-    this.x += this.speed * dt;
+    // while ememy still on screen
+    if(this.x < this.boundary) {
+      // Move forward across the screen
+      this.x += this.speed * dt;
+    } else {
+      // Reset post to start
+      this.x = this.restPos;
+    }
 };
 
 // Draw the enemy on the screen, required method for game
