@@ -62,6 +62,7 @@ Player.prototype.update = function() {
       if (gameLevel === 5) {
         gameLevel = 0;
       }
+      reward();
       this.victory = true;
     }
 };
@@ -100,6 +101,20 @@ Player.prototype.handleInput = function(input) {
     }
 };
 
+// Change the reward image if player wins
+function reward() {
+  if (gameLevel === 1) {
+    document.querySelector('.reward').src = 'images/Gem Blue.png';
+  } else if (gameLevel === 2) {
+    document.querySelector('.reward').src = 'images/Gem Green.png';
+  } else if (gameLevel === 3) {
+    document.querySelector('.reward').src = 'images/Gem Blue.png';
+  } else if (gameLevel === 4) {
+    document.querySelector('.reward').src = 'images/Gem Orange.png';
+  } else {
+    document.querySelector('.reward').src = 'images/Heart.png';
+  }
+}
 // Now instantiate your objects.
 const bug1 = new Enemy(-101, 0, 200);
 const bug2 = new Enemy(-101, 83, 300);
