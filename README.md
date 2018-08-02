@@ -1,6 +1,37 @@
-frontend-nanodegree-arcade-game
+
+# 5 Lives-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+### Description
+- This is based off of an old arcade game called Frogger. This is the 3rd project for my Udacity Front-end Nano-Degree. This game is created with Object Oriented JavaScript, HTML5 Canvas, and the class.js.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+- The point of the game is to get to the river without hitting the bug. Don't let the bugs touch you or you will have to start over.
+
+- It was a great experience making this game and I hope you enjoy playing it.
+
+### How to play
+To play this game please visit https://brownmagnus.github.io/5-Lives-arcade-game/.
+
+- Use the arrow keys to move the player safely to water.
+- Once you get to the water, you will win that level.
+- Once you get to the water safely, you will get a reward.
+- Beware of the bugs!:
+- On the next level your player's outfit will change.
+- Play Again and share.
+
+### Running on local computer
+- Download or clone the repository.
+- Open index.html to the browser.
+
+### Contributing
+- Udacity provided the starter code which included the HTML5 Canvas (resource.js and engine.js) and most of the images. The Udacity rubric has a list of all the minimum requirements to complete the project.
+
+- I referenced this Udacity HTML5 Canvas Course for adding the images (Player and Enemy) and to change the player character after every turn.
+
+- I got more insight from  FEND Project 3: Classic Arcade Game Clone with Ryan Boris (@RyanB), Core Concept review and Matthew Cranford review.
+
+### Future Updates
+Add stones randomly to the path
+Add key and star to for the player to collect before getting to the water
+
+## *Have Fun!*
